@@ -1,0 +1,9 @@
+setup.py
+superspark/__init__.py
+superspark/io.py
+superspark/processing.py
+superspark/schemas.py
+superspark.egg-info/PKG-INFO
+superspark.egg-info/SOURCES.txt
+superspark.egg-info/dependency_links.txt
+superspark.egg-info/top_level.txt
