@@ -1,4 +1,4 @@
-# SuperAnnotate on Databricks
+# Superannotate Databricks Connector
 SuperAnnotate is the cornerstone of your data labeling pipeline. It brings you a cutting-edge annotation tool for all types of data including image, video, text, LiDAR, audio, and more.
 
 This Python package provides a set of utilities for working with SuperAnnotate data on Databricks. It includes functionality to process SuperAnnotate data and save it to Delta tables.
