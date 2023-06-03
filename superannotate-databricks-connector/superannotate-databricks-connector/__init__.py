@@ -1,3 +1,3 @@
 from .io import *
-from .processing import *
+from .vector import *
 from .schemas import *

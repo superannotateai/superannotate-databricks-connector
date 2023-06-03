@@ -1,5 +1,5 @@
 Metadata-Version: 2.1
-Name: superspark
+Name: superannotate-databricks-connector
 Version: 0.3
 Summary: Custom functions to work with SuperAnnotate in Databricks
 Home-page: http://superannotate.com
