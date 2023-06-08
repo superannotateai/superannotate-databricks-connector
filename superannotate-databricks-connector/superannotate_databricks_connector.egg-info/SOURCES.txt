@@ -1,9 +1,9 @@
 setup.py
-superannotate-databricks-connector/__init__.py
-superannotate-databricks-connector/io.py
-superannotate-databricks-connector/processing.py
-superannotate-databricks-connector/schemas.py
-superannotate-databricks-connector/vector.py
+superannotate_databricks_connector/__init__.py
+superannotate_databricks_connector/io.py
+superannotate_databricks_connector/processing.py
+superannotate_databricks_connector/schemas.py
+superannotate_databricks_connector/vector.py
 superannotate_databricks_connector.egg-info/PKG-INFO
 superannotate_databricks_connector.egg-info/SOURCES.txt
 superannotate_databricks_connector.egg-info/dependency_links.txt

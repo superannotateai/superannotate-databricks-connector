@@ -1,1 +1,1 @@
-superannotate-databricks-connector
+superannotate_databricks_connector
