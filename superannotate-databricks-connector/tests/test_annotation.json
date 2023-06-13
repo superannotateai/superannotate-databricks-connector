@@ -1,0 +1,458 @@
+{
+    "metadata": {
+        "height": 1365,
+        "width": 2048,
+        "name": "CDY_2017.jpg",
+        "lastAction": {
+            "email": "leo@superannotate.com",
+            "timestamp": 1686570834999
+        },
+        "projectId": 139294,
+        "isPredicted": false,
+        "status": "InProgress",
+        "pinned": false,
+        "annotatorEmail": null,
+        "qaEmail": null
+    },
+    "instances": [
+        {
+            "type": "bbox",
+            "classId": 1622610,
+            "probability": 100,
+            "points": {
+                "x1": 434.53,
+                "x2": 568.32,
+                "y1": 712.81,
+                "y2": 848.69
+            },
+            "groupId": 0,
+            "pointLabels": {},
+            "locked": false,
+            "attributes": [
+                {
+                    "id": 2994312,
+                    "groupId": 736603,
+                    "name": "Bbox",
+                    "groupName": "Shape Type"
+                }
+            ],
+            "trackingId": null,
+            "error": null,
+            "createdAt": "2023-06-12T11:43:44.705Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "creationType": "Manual",
+            "updatedAt": "2023-06-12T11:53:45.639Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "className": "Grape"
+        },
+        {
+            "type": "polygon",
+            "classId": 1622610,
+            "probability": 100,
+            "points": [
+                716.73,
+                909.31,
+                677.02,
+                827.78,
+                674.93,
+                675.19,
+                725.09,
+                637.56,
+                773.17,
+                673.1,
+                804.53,
+                760.89,
+                812.89,
+                857.05,
+                810.8,
+                890.49,
+                796.17,
+                890.49,
+                754.36,
+                911.4
+            ],
+            "groupId": 0,
+            "pointLabels": {},
+            "locked": true,
+            "attributes": [
+                {
+                    "id": 2994314,
+                    "groupId": 736603,
+                    "name": "Other",
+                    "groupName": "Shape Type"
+                }
+            ],
+            "trackingId": null,
+            "error": null,
+            "createdAt": "2023-06-12T11:43:52.256Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "creationType": "Manual",
+            "updatedAt": "2023-06-12T11:53:47.883Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "exclude": [],
+            "className": "Grape"
+        },
+        {
+            "type": "point",
+            "classId": 1622610,
+            "probability": 100,
+            "x": 1038.65,
+            "y": 974.11,
+            "groupId": 0,
+            "pointLabels": {},
+            "locked": false,
+            "attributes": [],
+            "trackingId": null,
+            "error": null,
+            "createdAt": "2023-06-12T11:44:06.914Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "creationType": "Manual",
+            "updatedAt": "2023-06-12T11:44:08.929Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "className": "Grape"
+        },
+        {
+            "type": "rbbox",
+            "classId": 1622610,
+            "probability": 100,
+            "points": {
+                "x1": 955.95,
+                "y1": 734.45,
+                "x2": 1177.53,
+                "y2": 586.03,
+                "x3": 1296.95,
+                "y3": 764.33,
+                "x4": 1075.37,
+                "y4": 912.75
+            },
+            "groupId": 0,
+            "pointLabels": {},
+            "locked": false,
+            "attributes": [],
+            "trackingId": null,
+            "error": null,
+            "createdAt": "2023-06-12T11:44:14.227Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "creationType": "Manual",
+            "updatedAt": "2023-06-12T11:44:20.613Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "className": "Grape"
+        },
+        {
+            "type": "ellipse",
+            "classId": 1622610,
+            "probability": 100,
+            "cx": 1401.33,
+            "cy": 687.73,
+            "rx": 109.74,
+            "ry": 110.79,
+            "angle": 0,
+            "groupId": 0,
+            "pointLabels": {},
+            "locked": false,
+            "attributes": [
+                {
+                    "id": 2994313,
+                    "groupId": 736603,
+                    "name": "Ellipse",
+                    "groupName": "Shape Type"
+                }
+            ],
+            "trackingId": null,
+            "error": null,
+            "createdAt": "2023-06-12T11:44:26.389Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "creationType": "Manual",
+            "updatedAt": "2023-06-12T11:53:51.841Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "className": "Grape"
+        },
+        {
+            "type": "polyline",
+            "classId": 1622610,
+            "probability": 100,
+            "points": [
+                869.33,
+                1130.89,
+                965.49,
+                1041,
+                1141.08,
+                1034.73,
+                1471.35,
+                1030.55,
+                1603.05,
+                1149.7,
+                1598.87,
+                1365.01
+            ],
+            "groupId": 0,
+            "pointLabels": {},
+            "locked": false,
+            "attributes": [],
+            "trackingId": null,
+            "error": null,
+            "createdAt": "2023-06-12T11:44:36.428Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "creationType": "Manual",
+            "updatedAt": "2023-06-12T11:44:42.828Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "className": "Grape"
+        },
+        {
+            "type": "cuboid",
+            "classId": 1622610,
+            "probability": 100,
+            "points": {
+                "f1": {
+                    "x": 1563.33,
+                    "y": 900.95
+                },
+                "f2": {
+                    "x": 1674.12,
+                    "y": 781.8
+                },
+                "r1": {
+                    "x": 1536.16,
+                    "y": 777.62
+                },
+                "r2": {
+                    "x": 1749.37,
+                    "y": 558.13
+                }
+            },
+            "groupId": 0,
+            "pointLabels": {},
+            "locked": false,
+            "attributes": [],
+            "trackingId": null,
+            "error": null,
+            "createdAt": "2023-06-12T11:44:46.908Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "creationType": "Manual",
+            "updatedAt": "2023-06-12T11:45:00.764Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "className": "Grape"
+        },
+        {
+            "type": "tag",
+            "classId": 1626900,
+            "probability": 100,
+            "attributes": [],
+            "createdAt": "2023-06-12T11:53:41.951Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "creationType": "Manual",
+            "updatedAt": "2023-06-12T11:53:41.951Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "className": "Tag 2"
+        }
+    ],
+    "comments": [
+        {
+            "correspondence": [
+                {
+                    "text": "Rectangle",
+                    "email": "leo@superannotate.com"
+                },
+                {
+                    "text": "Responding that it is a bounding box",
+                    "email": "leo@superannotate.com"
+                }
+            ],
+            "x": 474.25,
+            "y": 777.61,
+            "resolved": false,
+            "createdAt": "2023-06-12T11:45:04.006Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "creationType": "Manual",
+            "updatedAt": "2023-06-12T11:45:45.469Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            }
+        },
+        {
+            "correspondence": [
+                {
+                    "text": "Polygon",
+                    "email": "leo@superannotate.com"
+                }
+            ],
+            "x": 746,
+            "y": 827.78,
+            "resolved": false,
+            "createdAt": "2023-06-12T11:45:11.910Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "creationType": "Manual",
+            "updatedAt": "2023-06-12T11:45:13.643Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            }
+        },
+        {
+            "correspondence": [
+                {
+                    "text": "Rotated Bounding Box",
+                    "email": "leo@superannotate.com"
+                }
+            ],
+            "x": 1095.09,
+            "y": 746.26,
+            "resolved": false,
+            "createdAt": "2023-06-12T11:45:15.052Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "creationType": "Manual",
+            "updatedAt": "2023-06-12T11:45:18.290Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            }
+        },
+        {
+            "correspondence": [
+                {
+                    "text": "Ellipse",
+                    "email": "leo@superannotate.com"
+                }
+            ],
+            "x": 1362.66,
+            "y": 687.73,
+            "resolved": false,
+            "createdAt": "2023-06-12T11:45:19.808Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "creationType": "Manual",
+            "updatedAt": "2023-06-12T11:45:21.435Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            }
+        },
+        {
+            "correspondence": [
+                {
+                    "text": "Polyline",
+                    "email": "leo@superannotate.com"
+                }
+            ],
+            "x": 1237.23,
+            "y": 1034.73,
+            "resolved": false,
+            "createdAt": "2023-06-12T11:45:22.867Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "creationType": "Manual",
+            "updatedAt": "2023-06-12T11:45:24.815Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            }
+        },
+        {
+            "correspondence": [
+                {
+                    "text": "Point",
+                    "email": "leo@superannotate.com"
+                }
+            ],
+            "x": 1042.83,
+            "y": 978.29,
+            "resolved": false,
+            "createdAt": "2023-06-12T11:45:27.362Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "creationType": "Manual",
+            "updatedAt": "2023-06-12T11:45:28.861Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            }
+        },
+        {
+            "correspondence": [
+                {
+                    "text": "Cuboid",
+                    "email": "leo@superannotate.com"
+                }
+            ],
+            "x": 1621.86,
+            "y": 712.81,
+            "resolved": false,
+            "createdAt": "2023-06-12T11:45:30.979Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "creationType": "Manual",
+            "updatedAt": "2023-06-12T11:45:33.706Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            }
+        }
+    ],
+    "tags": []
+}

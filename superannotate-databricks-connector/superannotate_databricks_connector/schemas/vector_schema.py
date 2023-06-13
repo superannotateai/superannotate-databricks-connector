@@ -1,21 +1,14 @@
 from pyspark.sql.types import (
-    StructType, StructField, StringType, IntegerType, FloatType, BooleanType, TimestampType, MapType, ArrayType
+    StructType,
+    StructField,
+    StringType,
+    IntegerType,
+    FloatType,
+    BooleanType,
+    MapType,
+    ArrayType
 )
-
-def get_comment_schema():
-    comment_schema = StructType([
-        StructField("correspondence", ArrayType(MapType(StringType(),StringType())),True),
-        StructField("x",FloatType(),True),
-        StructField("y",FloatType(),True),
-        StructField("resolved",BooleanType(),True),
-        StructField("createdAt",StringType(),True),
-        StructField("createdBy",MapType(StringType(),StringType()),True),
-        StructField("creationType",StringType(),True),
-        StructField("updatedAt",StringType(),True),
-        StructField("updatedBy",MapType(StringType(),StringType()),True)
-    ])
-    return comment_schema
-
+from .comment import get_comment_schema
 
 
 def get_point_schema():
@@ -43,13 +36,17 @@ def get_vector_instance_schema():
         StructField("probability", IntegerType(), True),
         StructField("bbox_points", MapType(StringType(), FloatType()), True),
         StructField("polygon_points", ArrayType(FloatType()), True),
-        StructField("polygon_exclude", ArrayType(ArrayType(FloatType())),True),
+        StructField("polygon_exclude", ArrayType(ArrayType(FloatType())),
+                    True),
         StructField("cuboid_points", get_cuboid_schema(), True),
-        StructField("ellipse_points", MapType(StringType(),FloatType()),True),
-        StructField("point_points", MapType(StringType(),FloatType()),True),
+        StructField("ellipse_points", MapType(StringType(), FloatType()),
+                    True),
+        StructField("point_points", MapType(StringType(), FloatType()), True),
         StructField("groupId", IntegerType(), True),
         StructField("locked", BooleanType(), True),
-        StructField("attributes", ArrayType(MapType(StringType(), StringType())), True),
+        StructField("attributes", ArrayType(MapType(StringType(),
+                                                    StringType())),
+                    True),
         StructField("trackingId", StringType(), True),
         StructField("error", StringType(), True),
         StructField("createdAt", StringType(), True),
@@ -64,8 +61,8 @@ def get_vector_instance_schema():
 
 def get_boxes_schema():
     instance_schema = StructType([
-            StructField("classes",ArrayType(IntegerType()),True),
-            StructField("boxes",ArrayType(ArrayType(IntegerType())),True)
+            StructField("classes", ArrayType(IntegerType()), True),
+            StructField("boxes", ArrayType(ArrayType(IntegerType())), True)
     ])
     return instance_schema
 
@@ -81,9 +78,9 @@ def get_vector_schema():
         StructField("pinned", BooleanType(), True),
         StructField("annotatorEmail", StringType(), True),
         StructField("qaEmail", StringType(), True),
-        StructField("instances", ArrayType(get_vector_instance_schema()), True),
-        StructField("bounding_boxes",get_boxes_schema(),True),
-        StructField("comments", ArrayType(get_comment_schema()),True)
-        
+        StructField("instances", ArrayType(get_vector_instance_schema()),
+                    True),
+        StructField("bounding_boxes", get_boxes_schema(), True),
+        StructField("comments", ArrayType(get_comment_schema()), True)
     ])
     return schema

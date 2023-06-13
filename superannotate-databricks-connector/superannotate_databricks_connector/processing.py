@@ -1,4 +1,4 @@
-from .schemas import get_vector_schema
+from .schemas.vector_schema import get_vector_schema
 
 
 def process_comment(comment):
@@ -69,12 +69,13 @@ def process_bounding_box(bbox, custom_id_map=None):
         TOP: top of the bounding box
         RIGHT: right of the bounding box
         BOTTOM: bottom of the bounding box"""
-    
+
     object_box = [int(x) for x in [bbox["points"]["x1"],
                                    bbox["points"]["y1"],
                                    bbox["points"]["x2"],
                                    bbox["points"]["y2"]]]
-    object_class = bbox["classId"] if custom_id_map is None else custom_id_map.get(bbox["className"])
+    object_class = bbox["classId"] if custom_id_map is None else custom_id_map\
+        .get(bbox["className"])
     return object_box, object_class
 
 

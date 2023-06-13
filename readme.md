@@ -18,6 +18,13 @@ Copy the notebooks in the demo folder to your databricks workspace to get starte
 pip install your-package-name
 ``` 
 
+### Tests
+
+Run tests by building the Dockerfile.test file using
+
+```bash
+docker build -f Dockerfile.test -t test_package .
+```
 ### Usage
 First import the required function
 
