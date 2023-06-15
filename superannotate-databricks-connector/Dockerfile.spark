@@ -1,4 +1,5 @@
-FROM python:3.9.1
+FROM python:3.11
+
 
 # Install curl and wget
 RUN apt-get update && apt-get install -y curl wget
@@ -6,9 +7,8 @@ RUN apt-get update && apt-get install -y curl wget
 ENV JAVA_VERSION=11
 
 # Install OpenJDK
-RUN apt-get update && \
-    apt-get install -y openjdk-${JAVA_VERSION}-jdk && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update
+RUN apt install default-jre -y
 
 # Verify Java Installation
 RUN java -version
@@ -18,6 +18,3 @@ RUN pip install pandas
 
 # Install PySpark
 RUN pip install pyspark
-
-# Test PySpark
-RUN python -c "from pyspark.sql import SparkSession; spark = SparkSession.builder.appName('test').getOrCreate()"

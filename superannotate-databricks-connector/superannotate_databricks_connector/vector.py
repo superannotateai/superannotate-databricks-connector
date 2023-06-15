@@ -7,9 +7,9 @@ def process_comment(comment):
     return comment
 
 
-def process_vector_instance(instance, custom_id_map=None):
+def process_vector_object(instance, custom_id_map=None):
     """
-    Takes one annotation instance and unpacks it.
+    Takes one annotation instance of an object and unpacks it.
 
     Args:
         instance (dict). One instance from the SuperAnnotate annotation format.
@@ -37,15 +37,40 @@ def process_vector_instance(instance, custom_id_map=None):
                            "ry": float(instance["ry"]),
                            "angle": float(instance["angle"])}
         if instance["type"] == "ellipse" else None,
-        'cuboid_points': {outer_k: {inner_k: float(inner_v) 
+        'cuboid_points': {outer_k: {inner_k: float(inner_v)
                                     for inner_k, inner_v in outer_v.items()}
                           for outer_k, outer_v in instance['points'].items()}
         if instance["type"] == "cuboid" else None,
-        'groupId': instance['groupId'],
+        'groupId': instance.get('groupId'),
         'locked': instance.get('locked'),
         'attributes': instance['attributes'],
         'trackingId': instance.get('trackingId'),
         'error': instance.get('error'),
+        'createdAt': instance.get('createdAt'),
+        'createdBy': instance.get('createdBy'),
+        'creationType': instance.get('creationType'),
+        'updatedAt': instance.get('updatedAt'),
+        'updatedBy': instance.get('updatedBy'),
+        'className': instance.get('className')
+    }
+
+
+def process_vector_tag(instance, custom_id_map=None):
+    """
+    Takes one annotation instance of a tag and unpacks it.
+
+    Args:
+        instance (dict). One instance from the SuperAnnotate annotation format.
+
+    Returns:
+        (dict) reformated instance
+    """
+    return {
+        'instance_type': instance['type'],
+        'classId': instance["classId"] if custom_id_map is None
+        else custom_id_map.get(instance["className"]),
+        'probability': instance.get('probability'),
+        'attributes': instance['attributes'],
         'createdAt': instance.get('createdAt'),
         'createdBy': instance.get('createdBy'),
         'creationType': instance.get('creationType'),
@@ -65,10 +90,10 @@ def process_bounding_box(bbox, custom_id_map=None):
         BOTTOM: bottom of the bounding box
         CLASS: class id of the bounding box"""
 
-    object_box = [int(x) for x in [bbox["points"]["x1"],
-                                   bbox["points"]["y1"],
-                                   bbox["points"]["x2"],
-                                   bbox["points"]["y2"]]]
+    object_box = [int(round(x)) for x in [bbox["points"]["x1"],
+                                          bbox["points"]["y1"],
+                                          bbox["points"]["x2"],
+                                          bbox["points"]["y2"]]]
     object_class = bbox["classId"]
     if custom_id_map is not None:
         object_class = custom_id_map.get(bbox["className"])
@@ -113,12 +138,16 @@ def get_vector_dataframe(annotations, spark, custom_id_map=None):
             'pinned': item["metadata"]['pinned'],
             'annotatorEmail': item["metadata"]['annotatorEmail'],
             'qaEmail': item["metadata"]['qaEmail'],
-            "instances": [process_vector_instance(instance, custom_id_map)
-                          for instance in item["instances"]],
+            "instances": [process_vector_object(instance, custom_id_map)
+                          for instance in item["instances"]
+                          if instance["type"] == "object"],
             "bounding_boxes": get_boxes(item["instances"], custom_id_map),
+            "tags": [process_vector_tag(instance, custom_id_map)
+                     for instance in item["instances"]
+                     if instance["type"] == "tag"],
             "comments": [process_comment(comment)
                          for comment in item["comments"]]
-            }
+        }
         rows.append(flattened_item)
     schema = get_vector_schema()
     spark_df = spark.createDataFrame(rows, schema=schema)

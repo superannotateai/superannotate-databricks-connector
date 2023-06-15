@@ -59,14 +59,6 @@ def get_vector_instance_schema():
     return instance_schema
 
 
-def get_boxes_schema():
-    instance_schema = StructType([
-            StructField("classes", ArrayType(IntegerType()), True),
-            StructField("boxes", ArrayType(ArrayType(IntegerType())), True)
-    ])
-    return instance_schema
-
-
 def get_vector_schema():
     schema = StructType([
         StructField("image_height", IntegerType(), True),
@@ -80,7 +72,7 @@ def get_vector_schema():
         StructField("qaEmail", StringType(), True),
         StructField("instances", ArrayType(get_vector_instance_schema()),
                     True),
-        StructField("bounding_boxes", get_boxes_schema(), True),
+        StructField("bounding_boxes", ArrayType(IntegerType()), True),
         StructField("comments", ArrayType(get_comment_schema()), True)
     ])
     return schema

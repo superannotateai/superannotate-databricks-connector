@@ -1,4 +1,4 @@
-FROM spark_docker_v1
+FROM spark_docker_v2
 
 # Add neccessary data
 ADD superannotate_databricks_connector superannotate_databricks_connector
