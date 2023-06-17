@@ -1,0 +1,317 @@
+{
+    "metadata": {
+        "name": "0.txt",
+        "lastAction": {
+            "email": "sium@superannotate.com",
+            "timestamp": 1684252930419
+        },
+        "contentLength": 385,
+        "projectId": 128064,
+        "url": "public-data/text/airplane_reviews/0.txt",
+        "status": "QualityCheck",
+        "annotatorEmail": null,
+        "qaEmail": null
+    },
+    "instances": [
+        {
+            "id": "1028b4a4-9133-4ba6-88c8-5d7eee57da15",
+            "start": 336,
+            "end": 344,
+            "classId": 1527710,
+            "attributes": [
+                {
+                    "id": 2539814,
+                    "groupId": 612680,
+                    "name": "Origin",
+                    "groupName": "Route"
+                }
+            ],
+            "type": "entity",
+            "creationType": "Manual",
+            "createdAt": "2023-03-30T21:18:55.358Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "updatedAt": "2023-03-30T21:19:01.554Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "className": "Airport"
+        },
+        {
+            "id": "6deacfad-e37b-41e7-aef5-81c934437513",
+            "start": 372,
+            "end": 384,
+            "classId": 1527710,
+            "attributes": [
+                {
+                    "id": 2539815,
+                    "groupId": 612680,
+                    "name": "Destination",
+                    "groupName": "Route"
+                }
+            ],
+            "type": "entity",
+            "creationType": "Manual",
+            "createdAt": "2023-03-30T21:19:03.868Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "updatedAt": "2023-03-30T21:19:08.879Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "className": "Airport"
+        },
+        {
+            "id": "0eb8e438-5112-4dc4-9bdf-51107df7f67d",
+            "start": 230,
+            "end": 238,
+            "classId": 1527710,
+            "attributes": [
+                {
+                    "id": 2539814,
+                    "groupId": 612680,
+                    "name": "Origin",
+                    "groupName": "Route"
+                }
+            ],
+            "type": "entity",
+            "creationType": "Manual",
+            "createdAt": "2023-03-30T21:19:14.434Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "updatedAt": "2023-03-30T21:19:20.816Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "className": "Airport"
+        },
+        {
+            "id": "89ea16ed-a1cb-4016-8041-24b67c75d956",
+            "start": 18,
+            "end": 47,
+            "classId": 1527712,
+            "attributes": [
+                {
+                    "id": 2539817,
+                    "groupId": 612681,
+                    "name": "",
+                    "groupName": ""
+                }
+            ],
+            "type": "entity",
+            "creationType": "Manual",
+            "createdAt": "2023-03-30T21:18:42.688Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "updatedAt": "2023-04-25T13:23:34.122Z",
+            "updatedBy": {
+                "email": "luis@superannotate.com",
+                "role": "Admin"
+            },
+            "className": "Experience - Positive"
+        },
+        {
+            "id": "409dc613-d315-4026-867c-ebd267055692",
+            "start": 133,
+            "end": 207,
+            "classId": 1527712,
+            "attributes": [
+                {
+                    "id": 2539821,
+                    "groupId": 612682,
+                    "name": "Origin",
+                    "groupName": "Location"
+                },
+                {
+                    "groupId": 612712,
+                    "name": 1,
+                    "groupName": "Facility ID"
+                }
+            ],
+            "type": "entity",
+            "creationType": "Manual",
+            "createdAt": "2023-03-31T07:36:38.492Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "updatedAt": "2023-03-31T07:39:34.632Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "className": "Experience - Positive"
+        },
+        {
+            "id": "ad1c16bc-d57a-4842-833a-9653b463f1ee",
+            "start": 247,
+            "end": 299,
+            "classId": 1527712,
+            "attributes": [],
+            "type": "entity",
+            "creationType": "Manual",
+            "createdAt": "2023-05-04T14:47:28.476Z",
+            "createdBy": {
+                "email": "sium@superannotate.com",
+                "role": "Admin"
+            },
+            "updatedAt": "2023-05-04T14:47:31.676Z",
+            "updatedBy": {
+                "email": "sium@superannotate.com",
+                "role": "Admin"
+            },
+            "className": "Experience - Positive"
+        },
+        {
+            "id": "b4d9771a-278d-4464-b80e-687a10a3a185",
+            "start": 82,
+            "end": 127,
+            "classId": 1527713,
+            "attributes": [
+                {
+                    "id": 2539824,
+                    "groupId": 612683,
+                    "name": "Origin",
+                    "groupName": "Location"
+                }
+            ],
+            "type": "entity",
+            "creationType": "Manual",
+            "createdAt": "2023-03-31T07:36:17.606Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "updatedAt": "2023-03-31T07:36:52.498Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "className": "Experience - Negative"
+        },
+        {
+            "id": "5428c1bb-2fdd-49f9-9cde-dc4d8983db91",
+            "start": 209,
+            "end": 226,
+            "classId": 1527743,
+            "attributes": [
+                {
+                    "id": 2539967,
+                    "groupId": 612709,
+                    "name": "Origin",
+                    "groupName": "Location"
+                },
+                {
+                    "groupId": 612710,
+                    "name": 1,
+                    "groupName": "Facility ID"
+                }
+            ],
+            "type": "entity",
+            "creationType": "Manual",
+            "createdAt": "2023-03-31T07:39:03.175Z",
+            "createdBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "updatedAt": "2023-03-31T07:39:17.592Z",
+            "updatedBy": {
+                "email": "leo@superannotate.com",
+                "role": "Admin"
+            },
+            "className": "Facility"
+        },
+        {
+            "id": "c99e7e1a-b9a8-4eed-adc1-d34c2f57a6b9",
+            "start": 247,
+            "end": 272,
+            "classId": 1597684,
+            "attributes": [],
+            "type": "entity",
+            "creationType": "Manual",
+            "createdAt": "2023-05-04T14:43:01.673Z",
+            "createdBy": {
+                "email": "sium@superannotate.com",
+                "role": "Admin"
+            },
+            "updatedAt": "2023-05-04T14:47:21.847Z",
+            "updatedBy": {
+                "email": "sium@superannotate.com",
+                "role": "Admin"
+            },
+            "className": "Comment"
+        },
+        {
+            "id": "4f586fa3-39fb-49f6-b21b-dc8571434174",
+            "start": 2,
+            "end": 246,
+            "classId": 1598276,
+            "attributes": [],
+            "type": "entity",
+            "creationType": "Manual",
+            "createdAt": "2023-04-25T13:24:20.601Z",
+            "createdBy": {
+                "email": "luis@superannotate.com",
+                "role": "Admin"
+            },
+            "updatedAt": "2023-04-25T13:24:24.550Z",
+            "updatedBy": {
+                "email": "luis@superannotate.com",
+                "role": "Admin"
+            },
+            "className": "Informacion"
+        },
+        {
+            "id": "417e93d4-c92d-4c4a-a316-5065a51aed36",
+            "start": 345,
+            "end": 371,
+            "classId": 1597684,
+            "attributes": [],
+            "type": "entity",
+            "creationType": "Manual",
+            "createdAt": "2023-05-16T16:01:19.340Z",
+            "createdBy": {
+                "email": "sium@superannotate.com",
+                "role": "Admin"
+            },
+            "updatedAt": "2023-05-16T16:01:34.303Z",
+            "updatedBy": {
+                "email": "sium@superannotate.com",
+                "role": "Admin"
+            },
+            "className": "Comment"
+        },
+        {
+            "classId": 1606581,
+            "name": "Positive",
+            "color": "#14C012",
+            "type": "tag",
+            "attributes": [],
+            "updatedAt": "2023-05-16T16:02:10.419Z",
+            "updatedBy": {
+                "email": "sium@superannotate.com",
+                "role": "Admin"
+            },
+            "createdAt": "2023-05-16T16:02:10.419Z",
+            "createdBy": {
+                "email": "sium@superannotate.com",
+                "role": "Admin"
+            },
+            "creationType": "Manual",
+            "className": "Positive"
+        }
+    ],
+    "freeText": "",
+    "tags": []
+}

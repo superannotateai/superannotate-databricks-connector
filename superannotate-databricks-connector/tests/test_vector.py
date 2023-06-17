@@ -1,7 +1,7 @@
 import unittest
 import json
 from pyspark.sql import SparkSession
-from superannotate_databricks_connector import (
+from superannotate_databricks_connector.vector import (
     process_bounding_box,
     process_vector_object,
     process_vector_tag,
@@ -13,11 +13,13 @@ from superannotate_databricks_connector import (
 class TestVectorInstances(unittest.TestCase):
     def __init__(self, *args):
         super().__init__(*args)
-        with open("./tests/test_data/test_annotation.json", "r") as f:
+        with open("./tests/test_data/vector/example_annotation.json",
+                  "r") as f:
             data = json.load(f)
 
         target_data = []
-        with open('./tests/test_data/processed_instances.json', "r") as f:
+        with open('./tests/test_data/vector/expected_instances.json',
+                  "r") as f:
             for line in f:
                 target_data.append(json.loads(line))
 
@@ -100,12 +102,14 @@ class TestVectorBoundingBoxes(unittest.TestCase):
 class TestVectorDataFrame(unittest.TestCase):
     def test_vector_dataframe(self):
         spark = SparkSession.builder.master("local").getOrCreate()
-        with open("./tests/test_data/test_annotation.json", "r") as f:
+        with open("./tests/test_data/vector/example_annotation.json",
+                  "r") as f:
             data = json.load(f)
 
         actual_df = get_vector_dataframe([data], spark)
 
-        expected_df = spark.read.parquet("./tests/test_data/vector_df.parquet")
+        expected_df = spark.read.parquet(
+            "./tests/test_data/vector/expected_df.parquet")
         self.assertEqual(sorted(actual_df.collect()),
                          sorted(expected_df.collect()))
 
