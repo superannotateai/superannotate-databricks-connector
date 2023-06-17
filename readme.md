@@ -7,7 +7,6 @@ This Python package provides a set of utilities for working with SuperAnnotate d
 ### Features
 - Process SuperAnnotate vector instance data.
 - Convert processed data into a PySpark DataFrame.
-- Write DataFrame to a Delta table, creating the table if it does not exist, or updating the existing table with new data.
 
 
 ### Example notebooks.
@@ -15,7 +14,7 @@ Copy the notebooks in the demo folder to your databricks workspace to get starte
 
 ### Installation
 ```bash
-pip install your-package-name
+pip install superannotate_databricks_connector
 ``` 
 
 ### Tests
@@ -29,7 +28,7 @@ docker build -f Dockerfile.test -t test_package .
 First import the required function
 
 ```python
-from your_package_name import get_vector_dataframe, write_annotations_to_delta
+from superannotate_databricks_conector.vector import get_vector_dataframe
 from superannotate import SAClient
 ```
 
@@ -41,8 +40,3 @@ annotations = sa.get_annotations("<PROJECT_NAME>)
 df = get_vector_dataframe(annotations, spark)
 ```
 
-Finally you can write the data frame to a delta table
-
-```python
-write_annotations_to_delta(df, "your_database", "your_table", spark)
-```
