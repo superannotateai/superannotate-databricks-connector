@@ -1,8 +1,0 @@
-Metadata-Version: 2.1
-Name: superannotate-databricks-connector
-Version: 0.3
-Summary: Custom functions to work with SuperAnnotate in Databricks
-Home-page: http://superannotate.com
-Author: Leo Lindén
-Author-email: leo@superannotate.com
-License: All Rights Reserved

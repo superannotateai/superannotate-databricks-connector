@@ -1,5 +1,5 @@
 from datetime import datetime
-from .schemas.text_schema import get_text_schema
+from superannotate_databricks_connector.schemas.text_schema import get_text_schema
 
 
 def convert_dates(instance):
@@ -45,7 +45,7 @@ def get_text_dataframe(annotations, spark):
             "status": item["metadata"]["status"],
             "annotatorEmail": item["metadata"]["annotatorEmail"],
             "qaEmail": item["metadata"]["qaEmail"],
-            "entities": [convert_dates(instance) for instance 
+            "entities": [convert_dates(instance) for instance
                          in item["instances"] if instance["type"] == "entity"],
             "tags": [convert_dates(instance) for instance in item["instances"]
                      if instance["type"] == "tag"]

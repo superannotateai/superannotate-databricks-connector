@@ -1,18 +1,18 @@
 FROM spark_docker_v2
 
-# Add neccessary data
-ADD superannotate_databricks_connector superannotate_databricks_connector
-ADD setup.py setup.py
-ADD tests tests
-
 # Build the package
 RUN python setup.py sdist bdist_wheel
 
 # Add the distribution
-ADD dist dist
+COPY src src
+
+RUN python -m build src
 
 # Install the package
 RUN pip install dist/*.whl
+
+# Add necessary data
+ADD tests tests
 
 # Run unit tests
 RUN python -m unittest discover tests
