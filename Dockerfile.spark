@@ -1,0 +1,20 @@
+FROM python:3.11
+
+
+# Install curl and wget
+RUN apt-get update && apt-get install -y curl wget
+
+ENV JAVA_VERSION=11
+
+# Install OpenJDK
+RUN apt-get update
+RUN apt install default-jre -y
+
+# Verify Java Installation
+RUN java -version
+
+# Install pandas
+RUN pip install pandas
+
+# Install PySpark
+RUN pip install pyspark
