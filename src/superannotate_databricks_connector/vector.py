@@ -1,4 +1,4 @@
-from .schemas.vector_schema import get_vector_schema
+from superannotate_databricks_connector.schemas.vector_schema import get_vector_schema
 
 
 def process_comment(comment):

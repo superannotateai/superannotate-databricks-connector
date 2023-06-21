@@ -1,5 +1,9 @@
-import unittest
 import json
+import os.path
+import unittest
+
+from tests import DATA_SET_PATH
+
 from pyspark.sql import SparkSession
 from superannotate_databricks_connector.vector import (
     process_bounding_box,
@@ -13,13 +17,11 @@ from superannotate_databricks_connector.vector import (
 class TestVectorInstances(unittest.TestCase):
     def __init__(self, *args):
         super().__init__(*args)
-        with open("./tests/test_data/vector/example_annotation.json",
-                  "r") as f:
+        with open(os.path.join(DATA_SET_PATH, "vector/example_annotation.json"), "r") as f:
             data = json.load(f)
 
         target_data = []
-        with open('./tests/test_data/vector/expected_instances.json',
-                  "r") as f:
+        with open(os.path.join(DATA_SET_PATH, 'vector/expected_instances.json'),"r") as f:
             for line in f:
                 target_data.append(json.loads(line))
 
@@ -94,7 +96,7 @@ class TestVectorBoundingBoxes(unittest.TestCase):
                          "y1": 2.1,
                          "y2": 18.9
                      },
-            "classId": 10229}]
+                      "classId": 10229}]
         target = [2, 1, 13, 22, 10228, 3, 2, 4, 19, 10229]
         self.assertEqual(get_boxes(instances), target)
 
@@ -102,14 +104,12 @@ class TestVectorBoundingBoxes(unittest.TestCase):
 class TestVectorDataFrame(unittest.TestCase):
     def test_vector_dataframe(self):
         spark = SparkSession.builder.master("local").getOrCreate()
-        with open("./tests/test_data/vector/example_annotation.json",
-                  "r") as f:
+        with open(os.path.join(DATA_SET_PATH, "vector/example_annotation.json"),"r") as f:
             data = json.load(f)
 
         actual_df = get_vector_dataframe([data], spark)
 
-        expected_df = spark.read.parquet(
-            "./tests/test_data/vector/expected_df.parquet")
+        expected_df = spark.read.parquet(os.path.join(DATA_SET_PATH, "vector/expected_df.parquet"))
         self.assertEqual(sorted(actual_df.collect()),
                          sorted(expected_df.collect()))
 
