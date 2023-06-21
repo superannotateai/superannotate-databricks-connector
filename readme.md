@@ -5,8 +5,11 @@ This Python package provides a set of utilities for working with SuperAnnotate d
 
 
 ### Features
-- Process SuperAnnotate vector instance data.
-- Convert processed data into a PySpark DataFrame.
+Convert superannotate annotation data to Apache Spark&trade; Data Frames. 
+Project types supported:
+    - Vector
+    - Text
+
 
 
 ### Example notebooks.
@@ -46,4 +49,5 @@ sa = SAClient(token="<TOKEN>")
 annotations = sa.get_annotations("<PROJECT_NAME>)
 df = get_vector_dataframe(annotations, spark)
 ```
+
 
