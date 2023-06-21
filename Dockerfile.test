@@ -1,12 +1,15 @@
-FROM spark_docker_v2
+FROM spark_docker_base
 
 # Build the package
-RUN python setup.py sdist bdist_wheel
+#RUN python setup.py sdist bdist_wheel
 
 # Add the distribution
 COPY src src
 
-RUN python -m build src
+# Add the config files
+ADD pyproject.toml pyproject.toml
+
+RUN python -m build
 
 # Install the package
 RUN pip install dist/*.whl

@@ -24,6 +24,13 @@ Run tests by building the Dockerfile.test file using
 ```bash
 docker build -f Dockerfile.test -t test_package .
 ```
+
+If you are running the tests for the first you first have to build the base dockerfile containing pyspark.
+
+```bash
+docker build -f Dockerfile.spark -t spark_docker_base .
+```
+
 ### Usage
 First import the required function
 

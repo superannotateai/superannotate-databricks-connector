@@ -16,5 +16,8 @@ RUN java -version
 # Install pandas
 RUN pip install pandas
 
+# Install build
+RUN pip install build
+
 # Install PySpark
 RUN pip install pyspark
