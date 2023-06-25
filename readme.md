@@ -34,6 +34,14 @@ If you are running the tests for the first you first have to build the base dock
 docker build -f Dockerfile.spark -t spark_docker_base .
 ```
 
+### Build package
+
+In the main directory, run the following to generate a .whl file. 
+
+```bash
+python -m build
+```
+
 ### Usage
 First import the required function
 
