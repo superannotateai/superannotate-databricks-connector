@@ -42,7 +42,6 @@ def get_text_schema():
     schema = StructType([
         StructField("name", StringType(), True),
         StructField("url", StringType(), True),
-        StructField("contentLength", IntegerType(), True),
         StructField("projectId", IntegerType(), True),
         StructField("status", StringType(), True),
         StructField("annotatorEmail", StringType(), True),
