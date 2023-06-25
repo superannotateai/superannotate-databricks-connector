@@ -59,6 +59,23 @@ def get_vector_instance_schema():
     return instance_schema
 
 
+def get_vector_tag_schema():
+    schema = StructType([
+        StructField("instance_type", StringType(), True),
+        StructField("classId", IntegerType(), True),
+        StructField("probability", IntegerType(), True),
+        StructField("attributes", ArrayType(MapType(StringType(),
+                                                    StringType())),
+                    True),
+        StructField("createdAt", StringType(), True),
+        StructField("createdBy", MapType(StringType(), StringType()), True),
+        StructField("creationType", StringType(), True),
+        StructField("updatedAt", StringType(), True),
+        StructField("updatedBy", MapType(StringType(), StringType()), True),
+        StructField("className", StringType(), True)])
+    return schema
+
+
 def get_vector_schema():
     schema = StructType([
         StructField("image_height", IntegerType(), True),
@@ -73,6 +90,7 @@ def get_vector_schema():
         StructField("instances", ArrayType(get_vector_instance_schema()),
                     True),
         StructField("bounding_boxes", ArrayType(IntegerType()), True),
-        StructField("comments", ArrayType(get_comment_schema()), True)
+        StructField("comments", ArrayType(get_comment_schema()), True),
+        StructField("tags", ArrayType(get_vector_tag_schema()), True)
     ])
     return schema

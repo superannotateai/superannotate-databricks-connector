@@ -1,5 +1,7 @@
 from datetime import datetime
-from superannotate_databricks_connector.schemas.text_schema import get_text_schema
+from superannotate_databricks_connector.schemas.text_schema import (
+    get_text_schema
+)
 
 
 def convert_dates(instance):
@@ -40,7 +42,6 @@ def get_text_dataframe(annotations, spark):
         flattened_item = {
             "name": item["metadata"]["name"],
             "url": item["metadata"]["url"],
-            "contentLength": item["metadata"]["contentLength"],
             "projecId": item["metadata"]["projectId"],
             "status": item["metadata"]["status"],
             "annotatorEmail": item["metadata"]["annotatorEmail"],

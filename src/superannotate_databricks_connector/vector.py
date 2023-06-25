@@ -1,4 +1,6 @@
-from superannotate_databricks_connector.schemas.vector_schema import get_vector_schema
+from superannotate_databricks_connector.schemas.vector_schema import (
+    get_vector_schema
+)
 
 
 def process_comment(comment):
@@ -140,7 +142,7 @@ def get_vector_dataframe(annotations, spark, custom_id_map=None):
             'qaEmail': item["metadata"]['qaEmail'],
             "instances": [process_vector_object(instance, custom_id_map)
                           for instance in item["instances"]
-                          if instance["type"] == "object"],
+                          if instance["type"] != "tag"],
             "bounding_boxes": get_boxes(item["instances"], custom_id_map),
             "tags": [process_vector_tag(instance, custom_id_map)
                      for instance in item["instances"]
