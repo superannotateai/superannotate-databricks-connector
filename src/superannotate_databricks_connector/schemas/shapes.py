@@ -113,7 +113,7 @@ def get_polygon_schema():
     """
     return StructType([
         StructField("points", ArrayType(FloatType()), True),
-        StructField("exclude", ArrayType(ArrayType(FloatType)), True)
+        StructField("exclude", ArrayType(ArrayType(FloatType())), True)
     ])
 
 
