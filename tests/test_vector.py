@@ -20,22 +20,16 @@ class TestVectorInstances(unittest.TestCase):
         with open(os.path.join(DATA_SET_PATH,
                                "vector/example_annotation.json"), "r") as f:
             data = json.load(f)
-
-        target_data = []
-        with open(os.path.join(DATA_SET_PATH,
-                               'vector/expected_instances.json'), "r") as f:
-            for line in f:
-                target_data.append(json.loads(line))
-
         self.test_data = data
-        self.target_data = target_data
         self.spark = SparkSession.builder.appName('test').getOrCreate()
 
     def __get_test_pair(self, instance_type):
         test = [data for data in self.test_data["instances"]
                 if data["type"] == instance_type][0]
-        target = [data for data in self.target_data
-                  if data["instance_type"] == instance_type][0]
+        with open(os.path.join(DATA_SET_PATH,
+                               f'vector/expected_{instance_type}.json'),
+                  "r") as f:
+            target = json.load(f)
         return test, target
 
     def __assert_equal(self, instance_type):

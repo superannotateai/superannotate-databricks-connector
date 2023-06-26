@@ -24,25 +24,29 @@ def process_vector_object(instance, custom_id_map=None):
         'classId': instance["classId"] if custom_id_map is None
         else custom_id_map.get(instance["className"]),
         'probability': instance.get('probability'),
-        'bbox_points': {k: float(v) for k, v in instance['points'].items()}
+        'bbox': {k: float(v) for k, v in instance['points'].items()}
         if instance["type"] == "bbox" else None,
-        'polygon_points': [float(p) for p in instance['points']]
+        'rbbox': {k: float(v) for k, v in instance['points'].items()}
+        if instance["type"] == "rbbox" else None,
+        'polygon': {"points": [float(p) for p in instance['points']]
+                    if instance["type"] == "polygon" else None,
+                    'exclude': instance.get("exclude")}
         if instance["type"] == "polygon" else None,
-        'polygon_exclude': instance["exclude"]
-        if instance["type"] == "polygon" else None,
-        'point_points': {"x": float(instance["x"]),
-                         "y": float(instance["y"])
-                         } if instance["type"] == "point" else None,
-        'ellipse_points': {"cx": float(instance["cx"]),
-                           "cy": float(instance["cy"]),
-                           "rx": float(instance["rx"]),
-                           "ry": float(instance["ry"]),
-                           "angle": float(instance["angle"])}
+        'point': {"x": float(instance.get("x")),
+                  "y": float(instance.get("y"))
+                  } if instance["type"] == "point" else None,
+        'ellipse': {"cx": float(instance["cx"]),
+                    "cy": float(instance["cy"]),
+                    "rx": float(instance["rx"]),
+                    "ry": float(instance["ry"]),
+                    "angle": float(instance["angle"])}
         if instance["type"] == "ellipse" else None,
-        'cuboid_points': {outer_k: {inner_k: float(inner_v)
-                                    for inner_k, inner_v in outer_v.items()}
-                          for outer_k, outer_v in instance['points'].items()}
+        'cuboid': {outer_k: {inner_k: float(inner_v)
+                             for inner_k, inner_v in outer_v.items()}
+                   for outer_k, outer_v in instance['points'].items()}
         if instance["type"] == "cuboid" else None,
+        "polyline": [float(p) for p in instance['points']]
+        if instance["type"] == "polyline" else None,
         'groupId': instance.get('groupId'),
         'locked': instance.get('locked'),
         'attributes': instance['attributes'],
@@ -150,7 +154,9 @@ def get_vector_dataframe(annotations, spark, custom_id_map=None):
             "comments": [process_comment(comment)
                          for comment in item["comments"]]
         }
+
         rows.append(flattened_item)
     schema = get_vector_schema()
+
     spark_df = spark.createDataFrame(rows, schema=schema)
     return spark_df

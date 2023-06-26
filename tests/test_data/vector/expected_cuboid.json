@@ -1,0 +1,46 @@
+{
+    "instance_type": "cuboid",
+    "classId": 1622610,
+    "probability": 100,
+    "bbox": null,
+    "rbbox": null,
+    "polygon": null,
+    "cuboid": {
+        "f1": {
+            "x": 1563.33,
+            "y": 900.95
+        },
+        "f2": {
+            "x": 1674.12,
+            "y": 781.8
+        },
+        "r1": {
+            "x": 1536.16,
+            "y": 777.62
+        },
+        "r2": {
+            "x": 1749.37,
+            "y": 558.13
+        }
+    },
+    "ellipse": null,
+    "polyline": null,
+    "point": null,
+    "groupId": 0,
+    "locked": false,
+    "attributes": [],
+    "trackingId": null,
+    "error": null,
+    "createdAt": "2023-06-12T11:44:46.908Z",
+    "createdBy": {
+        "email": "leo@superannotate.com",
+        "role": "Admin"
+    },
+    "creationType": "Manual",
+    "updatedAt": "2023-06-12T11:45:00.764Z",
+    "updatedBy": {
+        "email": "leo@superannotate.com",
+        "role": "Admin"
+    },
+    "className": "Grape"
+}
