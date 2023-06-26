@@ -1,0 +1,42 @@
+{
+    "instance_type": "ellipse",
+    "classId": 1622610,
+    "probability": 100,
+    "bbox": null,
+    "rbbox": null,
+    "polygon": null,
+    "cuboid": null,
+    "ellipse": {
+        "cx": 1401.33,
+        "cy": 687.73,
+        "rx": 109.74,
+        "ry": 110.79,
+        "angle": 0.0
+    },
+    "polyline": null,
+    "point": null,
+    "groupId": 0,
+    "locked": false,
+    "attributes": [
+        {
+            "id": 2994313,
+            "groupId": 736603,
+            "name": "Ellipse",
+            "groupName": "Shape Type"
+        }
+    ],
+    "trackingId": null,
+    "error": null,
+    "createdAt": "2023-06-12T11:44:26.389Z",
+    "createdBy": {
+        "email": "leo@superannotate.com",
+        "role": "Admin"
+    },
+    "creationType": "Manual",
+    "updatedAt": "2023-06-12T11:53:51.841Z",
+    "updatedBy": {
+        "email": "leo@superannotate.com",
+        "role": "Admin"
+    },
+    "className": "Grape"
+}

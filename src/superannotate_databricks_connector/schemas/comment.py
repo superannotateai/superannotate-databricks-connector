@@ -5,12 +5,15 @@ from pyspark.sql.types import (
     FloatType,
     BooleanType,
     MapType,
-    ArrayType
+    ArrayType,
+    IntegerType
 )
 
+from .shapes import get_bbox_schema
 
-def get_comment_schema():
-    comment_schema = StructType([
+
+def get_vector_comment_schema():
+    return StructType([
         StructField("correspondence",
                     ArrayType(MapType(
                         StringType(),
@@ -23,12 +26,53 @@ def get_comment_schema():
         StructField("createdBy", MapType(
             StringType(),
             StringType()),
-                    True),
+            True),
         StructField("creationType", StringType(), True),
         StructField("updatedAt", StringType(), True),
         StructField("updatedBy", MapType(
             StringType(),
             StringType()),
-                    True)
+            True)
     ])
-    return comment_schema
+
+
+def get_video_timestamp_schema():
+    return StructType([
+        StructField("timestamp", IntegerType(), True),
+        StructField("points", get_bbox_schema(), True)
+    ])
+
+
+def get_video_comment_parameter_schema():
+    return StructType([
+        StructField("start", IntegerType(), True),
+        StructField("end", IntegerType, True),
+        StructField("timestamps", ArrayType(
+            get_video_timestamp_schema()), True)
+    ])
+
+
+def get_video_comment_schema():
+    return StructType([
+        StructField("correspondence",
+                    ArrayType(MapType(
+                        StringType(),
+                        StringType())),
+                    True),
+        StructField("start", IntegerType(), True),
+        StructField("end", IntegerType(), True),
+        StructField("createdAt", StringType(), True),
+        StructField("createdBy", MapType(
+            StringType(),
+            StringType()),
+            True),
+        StructField("creationType", StringType(), True),
+        StructField("updatedAt", StringType(), True),
+        StructField("updatedBy", MapType(
+            StringType(),
+            StringType()),
+            True),
+        StructField("parameters",
+                    ArrayType(get_video_comment_parameter_schema()), True)
+
+    ])
