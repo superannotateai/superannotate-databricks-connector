@@ -1,0 +1,38 @@
+{
+    "instance_type": "rbbox",
+    "classId": 1622610,
+    "probability": 100,
+    "bbox": null,
+    "rbbox": {
+        "x1": 955.95,
+        "y1": 734.45,
+        "x2": 1177.53,
+        "y2": 586.03,
+        "x3": 1296.95,
+        "y3": 764.33,
+        "x4": 1075.37,
+        "y4": 912.75
+    },
+    "polygon": null,
+    "cuboid": null,
+    "ellipse": null,
+    "polyline": null,
+    "point": null,
+    "groupId": 0,
+    "locked": false,
+    "attributes": [],
+    "trackingId": null,
+    "error": null,
+    "createdAt": "2023-06-12T11:44:14.227Z",
+    "createdBy": {
+        "email": "leo@superannotate.com",
+        "role": "Admin"
+    },
+    "creationType": "Manual",
+    "updatedAt": "2023-06-12T11:44:20.613Z",
+    "updatedBy": {
+        "email": "leo@superannotate.com",
+        "role": "Admin"
+    },
+    "className": "Grape"
+}

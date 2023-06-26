@@ -3,45 +3,35 @@ from pyspark.sql.types import (
     StructField,
     StringType,
     IntegerType,
-    FloatType,
     BooleanType,
     MapType,
     ArrayType
 )
-from .comment import get_comment_schema
-
-
-def get_point_schema():
-    point_schema = StructType([
-        StructField("x", FloatType(), True),
-        StructField("y", FloatType(), True)
-    ])
-    return point_schema
-
-
-def get_cuboid_schema():
-    cuboid_points_schema = StructType([
-        StructField("f1", get_point_schema(), True),
-        StructField("f2", get_point_schema(), True),
-        StructField("r1", get_point_schema(), True),
-        StructField("r2", get_point_schema(), True)
-    ])
-    return cuboid_points_schema
+from .comment import get_vector_comment_schema
+from .shapes import (
+    get_point_schema,
+    get_cuboid_schema,
+    get_bbox_schema,
+    get_ellipse_schema,
+    get_polygon_schema,
+    get_polyline_schema,
+    get_rbbox_schema
+)
+from .tag import get_tag_schema
 
 
 def get_vector_instance_schema():
-    instance_schema = StructType([
+    return StructType([
         StructField("instance_type", StringType(), True),
         StructField("classId", IntegerType(), True),
         StructField("probability", IntegerType(), True),
-        StructField("bbox_points", MapType(StringType(), FloatType()), True),
-        StructField("polygon_points", ArrayType(FloatType()), True),
-        StructField("polygon_exclude", ArrayType(ArrayType(FloatType())),
-                    True),
-        StructField("cuboid_points", get_cuboid_schema(), True),
-        StructField("ellipse_points", MapType(StringType(), FloatType()),
-                    True),
-        StructField("point_points", MapType(StringType(), FloatType()), True),
+        StructField("bbox", get_bbox_schema(), True),
+        StructField("rbbox", get_rbbox_schema(), True),
+        StructField("polygon", get_polygon_schema()),
+        StructField("cuboid", get_cuboid_schema(), True),
+        StructField("ellipse", get_ellipse_schema(), True),
+        StructField("polyline", get_polyline_schema(), True),
+        StructField("point", get_point_schema(), True),
         StructField("groupId", IntegerType(), True),
         StructField("locked", BooleanType(), True),
         StructField("attributes", ArrayType(MapType(StringType(),
@@ -56,24 +46,6 @@ def get_vector_instance_schema():
         StructField("updatedBy", MapType(StringType(), StringType()), True),
         StructField("className", StringType(), True)
     ])
-    return instance_schema
-
-
-def get_vector_tag_schema():
-    schema = StructType([
-        StructField("instance_type", StringType(), True),
-        StructField("classId", IntegerType(), True),
-        StructField("probability", IntegerType(), True),
-        StructField("attributes", ArrayType(MapType(StringType(),
-                                                    StringType())),
-                    True),
-        StructField("createdAt", StringType(), True),
-        StructField("createdBy", MapType(StringType(), StringType()), True),
-        StructField("creationType", StringType(), True),
-        StructField("updatedAt", StringType(), True),
-        StructField("updatedBy", MapType(StringType(), StringType()), True),
-        StructField("className", StringType(), True)])
-    return schema
 
 
 def get_vector_schema():
@@ -90,7 +62,7 @@ def get_vector_schema():
         StructField("instances", ArrayType(get_vector_instance_schema()),
                     True),
         StructField("bounding_boxes", ArrayType(IntegerType()), True),
-        StructField("comments", ArrayType(get_comment_schema()), True),
-        StructField("tags", ArrayType(get_vector_tag_schema()), True)
+        StructField("comments", ArrayType(get_vector_comment_schema()), True),
+        StructField("tags", ArrayType(get_tag_schema()), True)
     ])
     return schema

@@ -1,0 +1,32 @@
+{
+    "instance_type": "point",
+    "classId": 1622610,
+    "probability": 100,
+    "bbox": null,
+    "rbbox": null,
+    "polygon": null,
+    "cuboid": null,
+    "ellipse": null,
+    "polyline": null,
+    "point": {
+        "x": 1038.65,
+        "y": 974.11
+    },
+    "groupId": 0,
+    "locked": false,
+    "attributes": [],
+    "trackingId": null,
+    "error": null,
+    "createdAt": "2023-06-12T11:44:06.914Z",
+    "createdBy": {
+        "email": "leo@superannotate.com",
+        "role": "Admin"
+    },
+    "creationType": "Manual",
+    "updatedAt": "2023-06-12T11:44:08.929Z",
+    "updatedBy": {
+        "email": "leo@superannotate.com",
+        "role": "Admin"
+    },
+    "className": "Grape"
+}

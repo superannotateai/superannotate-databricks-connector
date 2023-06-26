@@ -1,0 +1,42 @@
+{
+    "instance_type": "polyline",
+    "classId": 1622610,
+    "probability": 100,
+    "bbox": null,
+    "rbbox": null,
+    "polygon": null,
+    "cuboid": null,
+    "ellipse": null,
+    "polyline": [
+        869.33,
+        1130.89,
+        965.49,
+        1041,
+        1141.08,
+        1034.73,
+        1471.35,
+        1030.55,
+        1603.05,
+        1149.7,
+        1598.87,
+        1365.01
+    ],
+    "point": null,
+    "groupId": 0,
+    "locked": false,
+    "attributes": [],
+    "trackingId": null,
+    "error": null,
+    "createdAt": "2023-06-12T11:44:36.428Z",
+    "createdBy": {
+        "email": "leo@superannotate.com",
+        "role": "Admin"
+    },
+    "creationType": "Manual",
+    "updatedAt": "2023-06-12T11:44:42.828Z",
+    "updatedBy": {
+        "email": "leo@superannotate.com",
+        "role": "Admin"
+    },
+    "className": "Grape"
+}
