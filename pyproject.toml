@@ -1,8 +1,8 @@
 [project]
 
-name = "superannotate_databricks_connector"  # Required
+name = "superannotate_databricks_connector"  
 
-version = "0.0.2dev2"
+version = "0.0.2dev1"
 
 description = "Custom functions to work with SuperAnnotate in Databricks"
 
