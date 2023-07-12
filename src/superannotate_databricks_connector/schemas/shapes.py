@@ -43,7 +43,7 @@ def get_rbbox_schema():
         StructField("x3", FloatType(), True),
         StructField("y3", FloatType(), True),
         StructField("x4", FloatType(), True),
-        StructField("y5", FloatType(), True)
+        StructField("y4", FloatType(), True)
     ])
 
 
@@ -95,7 +95,7 @@ def get_ellipse_schema():
         StructField("cx", FloatType(), True),
         StructField("cy", FloatType(), True),
         StructField("rx", FloatType(), True),
-        StructField("ty", FloatType(), True),
+        StructField("ry", FloatType(), True),
         StructField("angle", FloatType(), True)
     ])
 
