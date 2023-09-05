@@ -34,7 +34,7 @@ classifiers = [# Optional
 ]
 
 dependencies = [
-    "pyspark~=3.4.0"
+
 ]
 
 [project.optional-dependencies]
